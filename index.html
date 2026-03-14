@@ -240,7 +240,7 @@ Chat on WhatsApp
 
 /* EMAILJS INIT */
 
-(function(){
+(function sendOrderEmail(customerName,productName,quantity,price){
 emailjs.init("YOUR_PUBLIC_KEY");
 })();
 
@@ -290,15 +290,22 @@ let phone=document.getElementById("phone").value
 
 let items=cart.map(i=>i.name+" ₹"+i.price).join(",")
 
-let templateParams={
+const templateParams={
+owner_email:"srivastavashivansh993@gmail.com" ,
 customer_name:name,
 phone:phone,
+quantity: quantity
 order_items:items
 }
 
 emailjs.send("YOUR_SERVICE_ID","YOUR_TEMPLATE_ID",templateParams)
-
-alert("Order Sent!")
+.then(function(response) {
+  console.log("SUCCESS!", response.status,response.text);
+  alert("Order placed successfully!");
+}, function(error) {
+  console.log("FAILED...", error);
+  alert("Order failed. Please try again.");
+});
 
 }
 
