@@ -10,156 +10,159 @@
 <style>
 
 body{
-font-family:Arial;
-margin:0;
-background:#f5f5f5;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #f5f5f5;
 }
 
 /* HERO */
 
 .hero{
-height:90vh;
-background:url('https://i.ibb.co/Y9nb6hZ/arabic-woman-teaching-senior-man-use-smartwatch-with-smartphone.jpg') center/cover no-repeat;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
-color:white;
+  height: 90vh;
+  background: url('https://i.ibb.co/Y9nb6hZ/arabic-woman-teaching-senior-man-use-smartwatch-with-smartphone.jpg') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
 }
 
 .hero h1{
-font-size:48px;
+  font-size: 48px;
 }
 
 .hero p{
-font-size:20px;
+  font-size: 20px;
 }
 
 .hero button{
-padding:12px 25px;
-border:none;
-background:#ff6600;
-color:white;
-font-size:18px;
-cursor:pointer;
-margin-top:15px;
+  padding: 12px 25px;
+  border: none;
+  background: #ff6600;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  margin-top: 15px;
 }
 
 /* PRODUCTS */
 
 .products{
-padding:40px 20px;
+  padding: 40px 20px;
 }
 
 .products h2{
-text-align:center;
+  text-align: center;
 }
 
 .carousel{
-display:flex;
-overflow-x:auto;
-gap:20px;
-padding:20px;
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  padding: 20px;
 }
 
 .card{
-min-width:230px;
-background:white;
-padding:15px;
-border-radius:10px;
-box-shadow:0 4px 10px rgba(0,0,0,0.1);
-text-align:center;
+  min-width: 230px;
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  text-align: center;
 }
 
 .card img{
-width:100%;
-border-radius:8px;
+  width: 100%;
+  border-radius: 8px;
 }
 
 .card button{
-background:#ff6600;
-border:none;
-color:white;
-padding:8px 15px;
-margin-top:10px;
-cursor:pointer;
+  background: #ff6600;
+  border: none;
+  color: white;
+  padding: 8px 15px;
+  margin-top: 10px;
+  cursor: pointer;
 }
 
 /* CART ICON */
 
 .cart-icon{
-position:fixed;
-top:20px;
-right:20px;
-background:#ff6600;
-width:45px;
-height:45px;
-border-radius:50%;
-display:flex;
-align-items:center;
-justify-content:center;
-color:white;
-font-size:22px;
-cursor:pointer;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #ff6600;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 22px;
+  cursor: pointer;
 }
 
 .cart-count{
-position:absolute;
-top:-5px;
-right:-5px;
-background:red;
-color:white;
-border-radius:50%;
-padding:3px 6px;
-font-size:12px;
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background: red;
+  color: white;
+  border-radius: 50%;
+  padding: 3px 6px;
+  font-size: 12px;
 }
 
 /* CART DRAWER */
 
 .cart{
-position:fixed;
-right:-350px;
-top:0;
-width:350px;
-height:100%;
-background:white;
-box-shadow:-3px 0 10px rgba(0,0,0,0.2);
-padding:20px;
-transition:0.3s;
-overflow:auto;
+  position: fixed;
+  right: -350px;
+  top: 0;
+  width: 350px;
+  height: 100%;
+  background: white;
+  box-shadow: -3px 0 10px rgba(0,0,0,0.2);
+  padding: 20px;
+  transition: 0.3s;
+  overflow: auto;
+  z-index: 1000;
 }
 
 .cart.active{
-right:0;
+  right: 0;
 }
 
 .cart input{
-width:100%;
-padding:8px;
-margin-top:10px;
+  width: 100%;
+  padding: 8px;
+  margin-top: 10px;
+  box-sizing: border-box;
 }
 
 .cart button{
-width:100%;
-padding:10px;
-background:#ff6600;
-color:white;
-border:none;
-margin-top:10px;
-cursor:pointer;
+  width: 100%;
+  padding: 10px;
+  background: #ff6600;
+  color: white;
+  border: none;
+  margin-top: 10px;
+  cursor: pointer;
 }
 
 /* WHATSAPP */
 
 .whatsapp{
-position:fixed;
-bottom:20px;
-right:20px;
-background:#25D366;
-color:white;
-padding:12px 18px;
-border-radius:40px;
-text-decoration:none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25D366;
+  color: white;
+  padding: 12px 18px;
+  border-radius: 40px;
+  text-decoration: none;
+  z-index: 1000;
 }
 
 </style>
@@ -169,20 +172,20 @@ text-decoration:none;
 
 <!-- CART ICON -->
 
-<div class="cart-icon" onclick="toggleCart()">
-🛒
-<span id="cartCount" class="cart-count">0</span>
+<div class="cart-icon" onclick="toggleCart()" aria-label="Open cart" role="button" tabindex="0">
+  🛒
+  <span id="cartCount" class="cart-count">0</span>
 </div>
 
 <!-- HERO -->
 
 <section class="hero">
 
-<div>
-<h1>Justsarfira</h1>
-<p>Fresh Finds, Best Prices</p>
-<button onclick="document.getElementById('products').scrollIntoView()">Shop Now</button>
-</div>
+  <div>
+    <h1>Justsarfira</h1>
+    <p>Fresh Finds, Best Prices</p>
+    <button type="button" onclick="document.getElementById('products').scrollIntoView({ behavior: 'smooth' })">Shop Now</button>
+  </div>
 
 </section>
 
@@ -190,126 +193,119 @@ text-decoration:none;
 
 <section class="products" id="products">
 
-<h2>Our Products</h2>
+  <h2>Our Products</h2>
 
-<div class="carousel">
+  <div class="carousel">
 
-<div class="card">
-<img src="https://i.ibb.co/7xKDxhNZ/IMG-20260312-152443553.jpg">
-<h4>Product 1</h4>
-<p>₹199</p>
-<button onclick="addToCart('Product 1',199)">Add to Cart</button>
-</div>
+    <div class="card">
+      <img src="https://i.ibb.co/7xKDxhNZ/IMG-20260312-152443553.jpg" alt="Product 1">
+      <h4>Product 1</h4>
+      <p>₹199</p>
+      <button type="button" onclick="addToCart('Product 1',199)">Add to Cart</button>
+    </div>
 
-<div class="card">
-<img src="https://i.ibb.co/TDqzHwNx/IMG-20260312-153633965-2.jpg">
-<h4>Product 2</h4>
-<p>₹299</p>
-<button onclick="addToCart('Product 2',299)">Add to Cart</button>
-</div>
+    <div class="card">
+      <img src="https://i.ibb.co/TDqzHwNx/IMG-20260312-153633965-2.jpg" alt="Product 2">
+      <h4>Product 2</h4>
+      <p>₹299</p>
+      <button type="button" onclick="addToCart('Product 2',299)">Add to Cart</button>
+    </div>
 
-</div>
+  </div>
 
 </section>
 
 <!-- CART DRAWER -->
 
-<div class="cart" id="cart">
+<div class="cart" id="cart" aria-hidden="true">
 
-<h3>Your Cart</h3>
+  <h3>Your Cart</h3>
 
-<ul id="cartItems"></ul>
+  <ul id="cartItems" aria-live="polite"></ul>
 
-<h4>Customer Details</h4>
+  <h4>Customer Details</h4>
 
-<input type="text" id="name" placeholder="Your Name">
+  <input type="text" id="name" placeholder="Your Name" autocomplete="name">
 
-<input type="text" id="phone" placeholder="Phone Number">
+  <input type="text" id="phone" placeholder="Phone Number" autocomplete="tel">
 
-<button onclick="sendOrder()">Send Order</button>
+  <button type="button" onclick="sendOrder()">Send Order</button>
 
 </div>
 
 <!-- WHATSAPP BUTTON -->
 
-<a class="whatsapp" href="https://wa.me/7388975489" target="_blank">
-Chat on WhatsApp
+<a class="whatsapp" href="https://wa.me/917388975489" target="_blank" rel="noopener noreferrer">
+  Chat on WhatsApp
 </a>
 
 <script>
-
 /* EMAILJS INIT */
-
-(function sendOrderEmail(customerName,productName,quantity,price){
-emailjs.init("YOUR_PUBLIC_KEY");
-})();
-
-let cart=[]
-let count=0
-
-function addToCart(name,price){
-
-cart.push({name,price})
-
-count++
-
-document.getElementById("cartCount").innerText=count
-
-displayCart()
-
+if (typeof emailjs !== 'undefined' && emailjs.init) {
+  emailjs.init("YOUR_PUBLIC_KEY");
+} else {
+  console.warn("emailjs library not loaded. Make sure the CDN is reachable.");
 }
 
-function displayCart(){
+let cart = [];
+let count = 0;
 
-let list=document.getElementById("cartItems")
-
-list.innerHTML=""
-
-cart.forEach(item=>{
-
-let li=document.createElement("li")
-
-li.innerText=item.name+" - ₹"+item.price
-
-list.appendChild(li)
-
-})
-
+function addToCart(name, price) {
+  cart.push({ name, price });
+  count = cart.length;
+  document.getElementById("cartCount").innerText = count;
+  displayCart();
 }
 
-function toggleCart(){
+function displayCart() {
+  const list = document.getElementById("cartItems");
+  list.innerHTML = "";
 
-document.getElementById("cart").classList.toggle("active")
+  // Aggregate items by name to show quantities
+  const summary = {};
+  cart.forEach(item => {
+    if (!summary[item.name]) summary[item.name] = { price: item.price, qty: 0 };
+    summary[item.name].qty++;
+  });
 
+  if (Object.keys(summary).length === 0) {
+    const li = document.createElement("li");
+    li.innerText = "Cart is empty.";
+    list.appendChild(li);
+    return;
+  }
+
+  Object.keys(summary).forEach(key => {
+    const li = document.createElement("li");
+    li.innerText = `${key} - ₹${summary[key].price} x ${summary[key].qty}`;
+    list.appendChild(li);
+  });
 }
 
-function sendOrder(){
-
-let name=document.getElementById("name").value
-let phone=document.getElementById("phone").value
-
-let items=cart.map(i=>i.name+" ₹"+i.price).join(",")
-
-const templateParams={
-owner_email:"srivastavashivansh993@gmail.com" ,
-customer_name:name,
-phone:phone,
-quantity: quantity
-order_items:items
+function toggleCart() {
+  const cartEl = document.getElementById("cart");
+  cartEl.classList.toggle("active");
+  // update aria-hidden for accessibility
+  const isActive = cartEl.classList.contains("active");
+  cartEl.setAttribute("aria-hidden", String(!isActive));
 }
 
-emailjs.send("YOUR_SERVICE_ID","YOUR_TEMPLATE_ID",templateParams)
-.then(function(response) {
-  console.log("SUCCESS!", response.status,response.text);
-  alert("Order placed successfully!");
-}, function(error) {
-  console.log("FAILED...", error);
-  alert("Order failed. Please try again.");
-});
+function sendOrder() {
+  const name = document.getElementById("name").value.trim();
+  const phone = document.getElementById("phone").value.trim();
 
-}
+  if (!name) {
+    alert("Please enter your name.");
+    return;
+  }
+  if (!phone) {
+    alert("Please enter your phone number.");
+    return;
+  }
+  if (cart.length === 0) {
+    alert("Your cart is empty.");
+    return;
+  }
 
-</script>
-
-</body>
-</html>
+  const items = cart.map(i => `${i.name} ₹${i.price}`).join*
+
